@@ -50,7 +50,7 @@ resource "databricks_metastore_assignment" "this" {
 The following arguments are required:
 
 * `name` - Name of metastore.
-* `storage_root` - Path on cloud storage account, where managed `databricks_table` are stored. Change forces creation of a new resource.
+* `storage_root` - (Optional) Path on cloud storage account, where managed `databricks_table` are stored. Change forces creation of a new resource.
 * `region` - (Mandatory for account-level) The region of the metastore
 * `owner` - (Optional) Username/groupname/sp application_id of the metastore owner.
 * `delta_sharing_scope` - (Optional) Required along with `delta_sharing_recipient_token_lifetime_in_seconds`. Used to enable delta sharing on the metastore. Valid values: INTERNAL, INTERNAL_AND_EXTERNAL.
@@ -63,6 +63,7 @@ The following arguments are required:
 In addition to all arguments above, the following attributes are exported:
 
 * `id` - system-generated ID of this Unity Catalog Metastore.
+
 ## Import
 
 This resource can be imported by ID:
